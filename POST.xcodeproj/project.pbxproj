@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		F769D38822403AC400950A25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F769D38722403AC400950A25 /* AppDelegate.swift */; };
-		F769D38A22403AC400950A25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F769D38922403AC400950A25 /* ViewController.swift */; };
 		F769D38D22403AC400950A25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F769D38B22403AC400950A25 /* Main.storyboard */; };
 		F769D38F22403AC600950A25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F769D38E22403AC600950A25 /* Assets.xcassets */; };
 		F769D39222403AC600950A25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F769D39022403AC600950A25 /* LaunchScreen.storyboard */; };
+		F769D39A22403B7600950A25 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F769D39922403B7600950A25 /* Post.swift */; };
+		F769D39C22403FE400950A25 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F769D39B22403FE400950A25 /* PostController.swift */; };
+		F769D39E22404A6B00950A25 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F769D39D22404A6B00950A25 /* PostListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F769D38422403AC400950A25 /* POST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POST.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F769D38722403AC400950A25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F769D38922403AC400950A25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F769D38C22403AC400950A25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F769D38E22403AC600950A25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F769D39122403AC600950A25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F769D39322403AC600950A25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F769D39922403B7600950A25 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		F769D39B22403FE400950A25 /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		F769D39D22404A6B00950A25 /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				F769D38722403AC400950A25 /* AppDelegate.swift */,
-				F769D38922403AC400950A25 /* ViewController.swift */,
 				F769D38B22403AC400950A25 /* Main.storyboard */,
+				F769D39D22404A6B00950A25 /* PostListViewController.swift */,
 				F769D38E22403AC600950A25 /* Assets.xcassets */,
 				F769D39022403AC600950A25 /* LaunchScreen.storyboard */,
 				F769D39322403AC600950A25 /* Info.plist */,
+				F769D39922403B7600950A25 /* Post.swift */,
+				F769D39B22403FE400950A25 /* PostController.swift */,
 			);
 			path = POST;
 			sourceTree = "<group>";
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F769D38A22403AC400950A25 /* ViewController.swift in Sources */,
+				F769D39E22404A6B00950A25 /* PostListViewController.swift in Sources */,
 				F769D38822403AC400950A25 /* AppDelegate.swift in Sources */,
+				F769D39A22403B7600950A25 /* Post.swift in Sources */,
+				F769D39C22403FE400950A25 /* PostController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
