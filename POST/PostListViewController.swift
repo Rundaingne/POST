@@ -52,21 +52,53 @@ class PostListViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    func presentNewPostAlert() {
+        let alertController = UIAlertController(title: "Create Post", message: "Say something ya dunce!", preferredStyle: .alert)
+        alertController.addTextField { (textField) in
+            textField.placeholder = "UserName"
+        }
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Message"
+        }
+        let postAction = UIAlertAction(title: "Post", style: .default) { (_) in
+            guard let username = alertController.textFields?[0].text,
+                let message = alertController.textFields?[1].text else {return}
+            self.postController.addNewPostWith(text: message, username: username, completion: {
+                self.reloadTableView()
+            })
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    
+        //Alright, I've got a few actions on this baby, and now I just need to put them all together and then present it.
+        alertController.addAction(postAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true)
+    }
+    
     func reloadTableView() {
         DispatchQueue.main.async {
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             self.tableViewOutlet.reloadData()
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    //MARK: - Actions
+    @IBAction func addPostButtonTapped(_ sender: UIBarButtonItem) {
+        presentNewPostAlert()
     }
-    */
+}
 
+extension PostListViewController {
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let posts = postController.posts else {return}
+        if indexPath.row >= posts.count - 1 {
+            postController.fetchPosts(reset: false) {
+                DispatchQueue.main.async {
+                    self.tableViewOutlet.reloadData()
+                }
+            }
+        }
+    }
+    
 }
